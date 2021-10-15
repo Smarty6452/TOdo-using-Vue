@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="./style.css">
+  
+</head>
+<body>
+
+  <nav>
+    <ul>
+        <li class="brand"><img src="./to-do-4783676.png" alt="Spotify"></li>
+        <li>Home</li>       
+        
+        <li>About</li>
+    </ul>
+</nav>
+
+
+
+
+<div id="app" class="container">
+  
+  <h1> Be Clear About What You Need to Do</h1>
+
+  <img src="./43029.jpg" alt="" srcset="">
+
+        <div v-if="!toEdit">
+            <input type="text" v-model="todo"  placeholder="Enter your task here ..">
+            <input type="submit" value="Add" @click="storeTodo" >
+        </div>
+
+        <div v-else>
+            <input type="text" v-model="todo">
+            <input type="submit" value="Update" @click="updateTodo">
+        </div>
+
+        <ol>
+           <div class="container2" >
+     
+           
+          
+                <li class="list" v-for="(todo, index) in todos">
+                    {{ todo }}
+
+              
+                        
+               
+            
+                <button @click="removeTodo(index)">Delete</button>
+                <button @click="editTodo(index, todo)">Edit</button>
+            
+            </li>
+        </div>
+              
+
+               
+        </ol>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script>
+
+        // creating new instance
+
+        new Vue({
+            el: '#app',
+            
+            data: {
+                toEdit: false,
+                todo: '',
+                todos: [],
+                selectedTodo: null
+            },
+            
+            methods: {
+                storeTodo() {
+                    this.todos.push(this.todo)
+                    this.todo = ''
+                },
+
+                removeTodo(index) {
+                    this.todos.splice(index, 1)
+                },
+
+                updateTodo() {
+                    this.todos.splice(this.selectedIndex, 1, this.todo)
+                    this.todo = ''
+                    this.toEdit = false
+                },
+
+                editTodo(index, todo) {
+                    this.toEdit = true
+                    this.todo = todo
+                    this.selectedIndex = index
+                }
+            }
+        })
+
+        </script>
+</body>
+<div class="container-fluid">
+
+   
+        <div class="center">
+            Copyright © 2020-2021 Smarty6452.com All rights reserved!
+        </div>
+    </footer>
+</div>
+</html>
