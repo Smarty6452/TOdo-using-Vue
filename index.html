@@ -43,15 +43,10 @@
 
         <ol>
            <div class="container2" >
-     
-           
+        
           
                 <li class="list" v-for="(todo, index) in todos">
                     {{ todo }}
-
-              
-                        
-               
             
                 <button @click="removeTodo(index)">Delete</button>
                 <button @click="editTodo(index, todo)">Edit</button>
@@ -105,12 +100,17 @@
 
         </script>
 </body>
+
 <div class="container-fluid">
 
-   
-        <div class="center">
-            Copyright © 2020-2021 Smarty6452.com All rights reserved!
-        </div>
-    </footer>
+ <footer>
+     <div class="center">
+         Copyright © 2020-2021 Smarty6452.com All rights reserved!
+     </div>
+
+ </footer>
+
+  
+
 </div>
 </html>
