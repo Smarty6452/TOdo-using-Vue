@@ -80,3 +80,21 @@ nav ul li{
     min-height: 160px;
 
 }
+
+.container-center{
+    max-width: 600px;
+    margin: auto;
+}
+.list-item-inline{
+    display:inline;
+    padding: 8px 15px;
+    margin: 2px;
+    
+}
+.list-item-inline img{
+    padding: 1px 78px;
+    border-radius: 20%;
+    margin: 0px -54px;
+    height: 60px;
+    
+}
